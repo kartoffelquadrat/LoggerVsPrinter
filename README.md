@@ -26,6 +26,8 @@ OR
 
 ## Enabling a logger
 
+Below steps summarize the steps to enable a logger in any maven project.
+
  * Add the logging framework to your pom.xml dependencies:  
 ```xml
         <dependency>
@@ -43,25 +45,25 @@ OR
  * Add a loggin configuration to your ```src/main/resources/log4j2.xml```:  
 Note: You can select different logger levels for different logger destinations.  
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration status="WARN">
-<appenders>
-    <Console name="Console" target="SYSTEM_OUT">
-        <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-    </Console>
+	<?xml version="1.0" encoding="UTF-8"?>
+	<configuration status="WARN">
+	<appenders>
+	    <Console name="Console" target="SYSTEM_OUT">
+		<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+	    </Console>
 
-    <File name="MyFile" fileName="logs/app.log">
-        <PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
-    </File>
-</appenders>
+	    <File name="MyFile" fileName="logs/app.log">
+		<PatternLayout pattern="%d{yyyy-mm-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+	    </File>
+	</appenders>
 
-<loggers>
-    <root level="debug">
-        <appender-ref ref="Console" level="info"/>
-        <appender-ref ref="MyFile" level="debug"/>
-    </root>
-</loggers>
-</configuration>
+	<loggers>
+	    <root level="debug">
+		<appender-ref ref="Console" level="info"/>
+		<appender-ref ref="MyFile" level="debug"/>
+	    </root>
+	</loggers>
+	</configuration>
 ```
  * Import the logger where needed:  
 ```java
@@ -73,7 +75,7 @@ import org.apache.logging.log4j.Logger;
   private static final Logger logger = LogManager.getLogger(PrinterVsLogger.class);
 ```
  * Call the logger with the desired severeness level:  
-```
+```java
   logger.error("Something really bad happened.");
   logger.warning("Something troublesome happened.");
   logger.info("Something worth mentioning happened.");
