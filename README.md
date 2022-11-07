@@ -82,6 +82,10 @@ import org.apache.logging.log4j.Logger;
   logger.debug("Something trivial happened.");
 ```
 
+## Documentation
+
+JavaDoc is [hosted on GitHub Pages](https://kartoffelquadrat.github.io/LoggerVsPrinter).
+
 ## Contact / Pull Requests
 
  * Author: Maximilian Schiedermeier ![email](email.png)
