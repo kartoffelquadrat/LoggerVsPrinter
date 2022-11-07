@@ -82,21 +82,7 @@
                 </configuration>
             </plugin>
 
-            <!-- specify main class for JAR manifest-->
-            <!--            <plugin>-->
-            <!--                <groupId>org.apache.maven.plugins</groupId>-->
-            <!--                <artifactId>maven-jar-plugin</artifactId>-->
-            <!--                <version>3.2.0</version>-->
-            <!--                <configuration>-->
-            <!--                    <archive>-->
-            <!--                        <manifest>-->
-            <!--                            <mainClass>eu.kartoffelquadrat.printer.PrinterVsLogger-->
-            <!--                            </mainClass>-->
-            <!--                        </manifest>-->
-            <!--                    </archive>-->
-            <!--                </configuration>-->
-            <!--            </plugin>-->
-            <!--            build self contained jar as default package / install goal-->
+            <!-- Build self contained JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
